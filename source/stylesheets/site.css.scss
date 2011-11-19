@@ -19,14 +19,28 @@ $side-gutter-width: $gutter-width;
 @include global-reset;
 
 body {
+  background-image: url("/images/bg.png");
   font-family: $font-family;
-  color: $font-color; 
+  color: $font-color;
 }
 
 a {
   @include link-colors($link-color, $link-hover-color, $link-focus-color, $link-active-color, $link-visited-color);
 }
 
-#main {
+#container {
   padding: 50px;
+}
+.rotate-right {
+  -webkit-transition: all 300ms ease-in-out;
+}
+.rotate-right:hover {
+  -webkit-transform: rotate(20deg);
+}
+
+.rotate-left {
+  -webkit-transition: all 300ms ease-in-out;
+}
+.rotate-left:hover {
+  -webkit-transform: rotate(-20deg);
 }
