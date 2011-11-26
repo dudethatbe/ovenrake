@@ -1,3 +1,5 @@
+# encoding : utf-8
+
 ### 
 # Compass
 ###
@@ -53,20 +55,28 @@
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def some_helper
+    "Helping"
+  end
+  def image_link(url, img)
+    "<a href='#{url}'><img src='#{img}' /></a>"
+  end
+  def link_to_function(name, function)
+    "<a href=\"#\" onclick=\"#{function}; return false;\">#{name}</a>"
+  end
+end
+
+#Encoding.default_external = 'utf-8'
 
 # Change the CSS directory
-# set :css_dir, "alternative_css_directory"
+set :css_dir, "source/css"
 
 # Change the JS directory
-# set :js_dir, "alternative_js_directory"
+set :js_dir, "source/js"
 
 # Change the images directory
-# set :images_dir, "alternative_image_directory"
+set :images_dir, "source/img"
 
 # Build-specific configuration
 configure :build do
@@ -74,7 +84,7 @@ configure :build do
   # activate :minify_css
   
   # Minify Javascript on build
-  # activate :minify_javascript
+  #activate :minify_javascript
   
   # Enable cache buster
   # activate :cache_buster

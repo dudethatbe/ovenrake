@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <%= stylesheet_link_tag "site.css" %>
-    <%= yield_content :head %>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+    <title>OVENRAKE</title>
+
+    <%= stylesheet_link_tag "/css/oven.css" %>
   </head>
 
-  <body class="<%= page_classes %>">
+  <body>
 
-  <div id="container">
-    <%= yield %>
+  <div role="main" id="main">
+    <header>
+      <div id="logo">
+        <img id="oven" src="/img/oven_small.png">
+        <br />
+        <img id="rake" src="/img/rake_small.png">
+      </div>
+      <br />
+      <nav>
+      <%= link_to_function "releases", "nav(\'#releases\')" %>
+      <%= link_to_function "promo/bookin", "nav(\'#promo\')" %>
+      <%= link_to_function "videos", "nav(\'#videos\')" %>
+      <%= link_to_function "pics", "nav(\'#pics\')" %>
+      </nav>
+      <div id="newest">
+      </div>
+    </header>
+      <div id="grid-content">
+      <%= yield %>
+      </div>
+    <footer>
+
+    </footer>
   </div>
 
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.0.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via build script -->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/jquery.scrollintoview.js"></script>
+  <script defer src="js/jquery.vgrid.0.1.7.min.js"></script>
+  <script defer src="js/jquery.easing.1.3.js"></script>
+  <script defer src="js/jquery-ui-1.8.16.custom.min.js"></script>
+
+  <script defer src="js/script.js"></script>
+  <!-- end scripts -->
+
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
   </body>
 </html>
