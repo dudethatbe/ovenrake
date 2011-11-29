@@ -1,2 +1,5 @@
 .sass-cache
 build/*
+*.pdf
+*.aux
+*.log
