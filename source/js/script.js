@@ -42,7 +42,6 @@ $(function(){
     client_id: "UQEF4PPsoCeJEifJKO9g"
   });
   SC.get("/users/ovenrake/tracks", {limit: 1}, function(tracks){
-    alert("Latest track: " + tracks[0].id);
     $('#sounds iframe').attr('src','http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F'+tracks[0].id+'&amp;auto_play=false&amp;show_artwork=true&amp;color=f300ba');
   });
 });
