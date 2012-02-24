@@ -28,6 +28,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :update do
+    system("middleman build")
     system("rsync -rv build/* freedrull@freedrool.us:/var/www/ovenrake.com/")
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
