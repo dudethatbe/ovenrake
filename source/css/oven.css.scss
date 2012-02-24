@@ -320,49 +320,65 @@ a:hover {
 
 header {
   padding: 15px;
-  background-image: url("/img/bg.png"); }
+  background-image: url("/img/bg.png"); 
+}
 
 footer {
-  padding: 15px; }
+  padding: 15px; 
+}
 
 h1 span {
   color: #0600ba;
   text-shadow: 2px 2px 0px #f300ba;
-  padding: 5px; }
+  padding: 5px; 
+}
 
 #grid-content {
   overflow: hidden;
-  height: 0; }
+  height: 0; 
+}
 
 #grid-content div {
   padding: 5px;
   width: 600px;
   overflow: hidden;
-  border: 1px solid #000; }
+  border: 1px solid #000; 
+}
 
 #oven {
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out; }
+  -ms-transition: all 500ms ease-in-out; 
+}
 
 #oven:hover {
   -webkit-transform: rotate(1deg);
   -moz-transform: rotate(1deg);
   -o-transform: rotate(1deg);
-  -ms-transform: rotate(1deg); }
+  -ms-transform: rotate(1deg); 
+}
 
 #rake {
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out; }
+  -ms-transition: all 500ms ease-in-out; 
+}
 
 #rake:hover {
   -webkit-transform: rotate(-1deg);
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg); }
+  -ms-transform: rotate(-1deg); 
+}
+
+#affiliates li {
+  list-style:none;
+  display: inline;
+  padding-right:20px;
+  float:left;
+}
 
 /* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.
