@@ -293,24 +293,30 @@ td {
 /* ==|== primary styles =====================================================
    Author:
    ========================================================================== */
+
+$blue: #0600ba;
+$pink: #f300ba;
+
 body {
   background: #0600ba;
   /* for non-css3 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#0600ba), to(#f300ba));
-  background: -moz-linear-gradient(top, #0600ba, #f300ba);
-  background: -o-linear-gradient(top, #0600ba, #f300ba);
-  background: gradient(linear, left top, left bottom, from(#0600ba), to(#f300ba));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0600ba', endColorstr='#f300ba');
+  background: -webkit-gradient(linear, left top, left bottom, from($blue), to($pink));
+  background: -moz-linear-gradient(top, $blue, $pink);
+  background: -o-linear-gradient(top, $blue, $pink);
+  background: gradient(linear, left top, left bottom, from($blue), to($pink));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$blue}', endColorstr='#{$pink}');
   background-attachment: fixed;
   color: white; }
 
 a {
   background: black;
-  color: #0600ba;
-  text-decoration: none; }
+  color: $blue;
+  text-decoration: none; 
+}
 
 a:hover {
-  color: #f300ba; }
+  color: #f300ba; 
+}
 
 #main {
   background: black;
@@ -329,7 +335,7 @@ footer {
 
 h1 span {
   color: #0600ba;
-  text-shadow: 2px 2px 0px #f300ba;
+  text-shadow: 2px 2px 0px $pink;
   padding: 5px; 
 }
 
@@ -339,8 +345,8 @@ h1 span {
 }
 
 #grid-content div {
-  padding: 5px;
-  width: 600px;
+  margin: 0 0 30px 30px;
+  width: 400px;
   overflow: hidden;
   border: 1px solid #000; 
 }
@@ -375,9 +381,20 @@ h1 span {
 
 #affiliates li {
   list-style:none;
-  display: inline;
-  padding-right:20px;
-  float:left;
+  padding-bottom:20px;
+}
+
+nav a {
+  font-size: 45px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px $pink;
+  padding:5px;
+}
+nav a:hover {
+  color: $pink;
+  font-size: 45px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px $blue;
 }
 
 /* ==|== media queries ======================================================
