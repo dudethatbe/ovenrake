@@ -1,9 +1,9 @@
 set :application, "ovenrake.com"
-set :repository,  "freedrull@freedrool.us:/opt/git/ovenrake.com.git"
+set :repository,  "git@github.com:mcfiredrill/ovenrake.git"
 
 #set :scm, :git
 #set :deploy_to, "/var/www/freedrool.us/"
-set :user, "freedrull"
+set :user, "dudethatbe"
 set :deploy_via, :remote_cache
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
@@ -29,7 +29,7 @@ namespace :deploy do
   task :stop do ; end
   task :update do
     system("middleman build")
-    system("rsync -rv build/* freedrull@freedrool.us:/var/www/ovenrake.com/")
+    system("rsync -rv build/* dudethatbe@freedrool.us:/var/www/ovenrake.com/")
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
    #run "#{try_sudo} /etc/rc.d/nginx restart"
